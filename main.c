@@ -1,6 +1,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <cell.h>
+#include <list.h>
 
 int main(void){
     int value = 42;
@@ -12,17 +13,24 @@ int main(void){
     Cell *void_cell = create_cell(str, VOID);
     Cell *void_malloc_cell = create_cell(strdup(str), VOID_MALLOC);
 
-    print_cell(int_cell);
-    print_cell(str_cell);
-    print_cell(float_cell);
-    print_cell(void_cell);
-    print_cell(void_malloc_cell);
+    List *list = create_list();
+    list_insert(list, int_cell);
+    list_insert(list, str_cell);
+    list_insert(list, float_cell);
+    list_insert(list, void_cell);
+    list_insert(list, void_malloc_cell);
 
-    free_cell(int_cell);
-    free_cell(str_cell);
-    free_cell(float_cell);
-    free_cell(void_cell);
-    free_cell(void_malloc_cell);
+    print_list(list);
+    // clear_list(list);
+    // print_list(list);
+    
+    list_remove(list, 0);
+    list_remove(list, 3);
+    list_remove(list, 1);
+    print_list(list);
+    
+    print_cell(list_get_idx(list, 1));
 
+    free_list(list);
     return 0;
 }

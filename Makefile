@@ -11,7 +11,8 @@ FLAGS = -O3 -Wall -std=gnu99
 all: library app
 
 library:\
-	$(OBJ)/cell.o
+	$(OBJ)/cell.o\
+	$(OBJ)/list.o
 
 $(OBJ)/%.o: $(SRC)/%.c $(INCLUDE)/%.h
 	gcc -c $< -I $(INCLUDE) $(FLAGS) -o $@

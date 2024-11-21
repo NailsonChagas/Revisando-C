@@ -21,6 +21,7 @@ void free_cell(Cell *cell){
 }
 
 void print_cell(Cell *cell){
+    printf("Current: %p / ", cell);
     switch (cell->type){
         case INT:
             printf("Data: %d\n", *(int *)(cell->data));
@@ -41,6 +42,6 @@ void print_cell(Cell *cell){
             printf("\n");
             break;
     }
-    printf("Next: %p \t Previous: %p\n", cell->next, cell->previous);
-    printf("--------------------------------\n");
+    printf("Previous: %p / Next: %p\n", cell->previous, cell->next);
+    printf("-------------------------------------------------------------------------------\n");
 }

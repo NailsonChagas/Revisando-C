@@ -18,10 +18,7 @@ int main(void){
     list_insert(list, float_cell);
     list_insert(list, void_cell);
     list_insert(list, void_malloc_cell);
-
     print_list(list);
-    // clear_list(list);
-    // print_list(list);
     
     list_remove(list, 0);
     list_remove(list, 3);
@@ -29,6 +26,9 @@ int main(void){
     print_list(list);
     
     print_cell(list_get_idx(list, 1));
+
+    clear_list(list);
+    print_list(list);
 
     free_list(list);
     return 0;

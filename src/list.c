@@ -75,14 +75,13 @@ void list_remove(List *list, int index){
 
 void clear_list(List *list){
     Cell *aux = list->head;
-    Cell *next_cell;
 
     while (aux != NULL) {
-        next_cell = aux->next;  
-        free_cell(aux);         
-        aux = next_cell;       
+        list->head = aux->next;
+        free_cell(aux);
+        aux = list->head;
+        list->length -= 1;
     }
-    list->length = 0;
 }
 
 void free_list(List *list){

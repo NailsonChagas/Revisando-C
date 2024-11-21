@@ -1,6 +1,4 @@
 #include <cell.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 Cell* create_cell(void *data, DataType type){
     Cell *new = (Cell*)malloc(sizeof(Cell));

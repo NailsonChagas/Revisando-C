@@ -1,5 +1,4 @@
 #include <string.h>
-#include <stdio.h>
 #include <cell.h>
 #include <list.h>
 

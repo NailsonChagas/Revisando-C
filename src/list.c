@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include <list.h>
 
 List *create_list(void){
